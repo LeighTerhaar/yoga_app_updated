@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Yogaflow #<%= @yogaflow.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/yogaflows" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link yogaflow start -->
+      <div class="col">
+        <a href="/yogaflows/<%= @yogaflow.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit yogaflow
+        </a>
+      </div>
+      <!-- Edit link yogaflow end -->
+
+      <!-- Delete link yogaflow start -->
+      <div class="col">
+        <a href="/delete_yogaflow/<%= @yogaflow.id %>" class="btn btn-block btn-outline-secondary">
+          Delete yogaflow
+        </a>
+      </div>
+      <!-- Delete link yogaflow end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @yogaflow.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Title
+      </dt>
+      <!-- Display title start -->
+      <dd>
+        <%= @yogaflow.title %>
+      </dd>
+      <!-- Display title end -->
+
+      <dt>
+        Intention
+      </dt>
+      <!-- Display intention start -->
+      <dd>
+        <%= @yogaflow.intention %>
+      </dd>
+      <!-- Display intention end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @yogaflow.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Yogatype
+      </dt>
+      <!-- Display yogatype start -->
+      <dd>
+        <%= @yogaflow.yogatype %>
+      </dd>
+      <!-- Display yogatype end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@yogaflow.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@yogaflow.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
