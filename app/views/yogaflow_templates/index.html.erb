@@ -70,7 +70,11 @@
 
         <!-- Display yogaflow.user_id start -->
         <td>
-          <%= yogaflow.user.email %>
+          <% if yogaflow.user.present? %>
+            <a href="/users/<%= yogaflow.user.id %>">
+              <%= yogaflow.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display yogaflow.user_id end -->
 

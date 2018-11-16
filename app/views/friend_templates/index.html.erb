@@ -58,13 +58,21 @@
 
         <!-- Display friend.follower_id start -->
         <td>
-          <%= friend.follower.email %>
+          <% if friend.follower.present? %>
+            <a href="/users/<%= friend.follower.id %>">
+              <%= friend.follower.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friend.follower_id end -->
 
         <!-- Display friend.leader_id start -->
         <td>
-          <%= friend.leader.email %>
+          <% if friend.leader.present? %>
+            <a href="/users/<%= friend.leader.id %>">
+              <%= friend.leader.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friend.leader_id end -->
 

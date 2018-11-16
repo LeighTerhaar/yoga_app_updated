@@ -34,7 +34,11 @@
       </dt>
       <!-- Display yogaflow_id start -->
       <dd>
-        <%= @pose.yogaflow_id %>
+        <% if @pose.yogaflow.present? %>
+          <a href="/yogaflows/<%= @pose.yogaflow_id %>">
+            <%= @pose.yogaflow.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display yogaflow_id end -->
 

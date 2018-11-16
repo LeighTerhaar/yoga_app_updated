@@ -34,7 +34,11 @@
       </dt>
       <!-- Display follower_id start -->
       <dd>
-        <%= @friend.follower_id %>
+        <% if @friend.follower.present? %>
+          <a href="/users/<%= @friend.follower_id %>">
+            <%= @friend.follower.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display follower_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display leader_id start -->
       <dd>
-        <%= @friend.leader_id %>
+        <% if @friend.leader.present? %>
+          <a href="/users/<%= @friend.leader_id %>">
+            <%= @friend.leader.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display leader_id end -->
 

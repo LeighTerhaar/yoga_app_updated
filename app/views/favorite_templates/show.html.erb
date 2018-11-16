@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @favorite.user_id %>
+        <% if @favorite.user.present? %>
+          <a href="/users/<%= @favorite.user_id %>">
+            <%= @favorite.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display yogaflow_id start -->
       <dd>
-        <%= @favorite.yogaflow_id %>
+        <% if @favorite.yogaflow.present? %>
+          <a href="/yogaflows/<%= @favorite.yogaflow_id %>">
+            <%= @favorite.yogaflow.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display yogaflow_id end -->
 

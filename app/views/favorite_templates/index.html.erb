@@ -58,13 +58,21 @@
 
         <!-- Display favorite.user_id start -->
         <td>
-          <%= favorite.user.email %>
+          <% if favorite.user.present? %>
+            <a href="/users/<%= favorite.user.id %>">
+              <%= favorite.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite.user_id end -->
 
         <!-- Display favorite.yogaflow_id start -->
         <td>
-          <%= favorite.yogaflow.user_id %>
+          <% if favorite.yogaflow.present? %>
+            <a href="/yogaflows/<%= favorite.yogaflow.id %>">
+              <%= favorite.yogaflow.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display favorite.yogaflow_id end -->
 
