@@ -46,7 +46,7 @@ class YogaflowsController < ApplicationController
   def update_row
     @yogaflow = Yogaflow.find(params.fetch("id_to_modify"))
 
-    @yogaflow.user_id = params.fetch("user_id")
+    
     @yogaflow.title = params.fetch("title")
     @yogaflow.intention = params.fetch("intention")
     @yogaflow.description = params.fetch("description")
