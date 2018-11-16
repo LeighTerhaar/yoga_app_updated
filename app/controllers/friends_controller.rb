@@ -53,6 +53,22 @@ class FriendsController < ApplicationController
     end
   end
 
+  def destroy_row_from_leader
+    @friend = Friend.find(params.fetch("id_to_remove"))
+
+    @friend.destroy
+
+    redirect_to("/users/#{@friend.leader_id}", notice: "Friend deleted successfully.")
+  end
+
+  def destroy_row_from_follower
+    @friend = Friend.find(params.fetch("id_to_remove"))
+
+    @friend.destroy
+
+    redirect_to("/users/#{@friend.follower_id}", notice: "Friend deleted successfully.")
+  end
+
   def destroy_row
     @friend = Friend.find(params.fetch("id_to_remove"))
 

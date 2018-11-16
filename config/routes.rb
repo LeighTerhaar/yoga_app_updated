@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_friend/:id_to_remove", { :controller => "friends", :action => "destroy_row" })
+  get("/delete_friend_from_follower/:id_to_remove", { :controller => "friends", :action => "destroy_row_from_follower" })
+  get("/delete_friend_from_leader/:id_to_remove", { :controller => "friends", :action => "destroy_row_from_leader" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_favorite/:id_to_remove", { :controller => "favorites", :action => "destroy_row" })
+  get("/delete_favorite_from_yogaflow/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_yogaflow" })
+  get("/delete_favorite_from_user/:id_to_remove", { :controller => "favorites", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -56,6 +60,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_pose/:id_to_remove", { :controller => "poses", :action => "destroy_row" })
+  get("/delete_pose_from_yogaflow/:id_to_remove", { :controller => "poses", :action => "destroy_row_from_yogaflow" })
 
   #------------------------------
 
@@ -75,6 +80,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_yogaflow/:id_to_remove", { :controller => "yogaflows", :action => "destroy_row" })
+  get("/delete_yogaflow_from_user/:id_to_remove", { :controller => "yogaflows", :action => "destroy_row_from_user" })
 
   #------------------------------
 

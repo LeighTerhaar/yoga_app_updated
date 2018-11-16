@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Yogaflows
+
+    <a data-toggle="collapse" href="#user_yogaflows_new_form">
+      Add yogaflow
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.yogaflows.each do |yogaflow| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/yogaflows/<%= yogaflow.id %>">
+          <%= yogaflow.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

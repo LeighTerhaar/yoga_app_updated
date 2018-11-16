@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Favoriteyogaflows
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.favoriteyogaflows.each do |yogaflow| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/yogaflows/<%= yogaflow.id %>">
+          <%= yogaflow.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

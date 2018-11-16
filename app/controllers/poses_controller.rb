@@ -57,6 +57,14 @@ class PosesController < ApplicationController
     end
   end
 
+  def destroy_row_from_yogaflow
+    @pose = Pose.find(params.fetch("id_to_remove"))
+
+    @pose.destroy
+
+    redirect_to("/yogaflows/#{@pose.yogaflow_id}", notice: "Pose deleted successfully.")
+  end
+
   def destroy_row
     @pose = Pose.find(params.fetch("id_to_remove"))
 
