@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/favorites/new", { :controller => "favorites", :action => "new_form" })
   post("/create_favorite", { :controller => "favorites", :action => "create_row" })
+  post("/create_favorite_from_yogaflow", { :controller => "favorites", :action => "create_row_from_yogaflow" })
 
   # READ
   get("/favorites", { :controller => "favorites", :action => "index" })
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/poses/new", { :controller => "poses", :action => "new_form" })
   post("/create_pose", { :controller => "poses", :action => "create_row" })
+  post("/create_pose_from_yogaflow", { :controller => "poses", :action => "create_row_from_yogaflow" })
 
   # READ
   get("/poses", { :controller => "poses", :action => "index" })

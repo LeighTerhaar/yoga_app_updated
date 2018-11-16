@@ -34,6 +34,23 @@ class PosesController < ApplicationController
     end
   end
 
+  def create_row_from_yogaflow
+    @pose = Pose.new
+
+    @pose.yogaflow_id = params.fetch("yogaflow_id")
+    @pose.name = params.fetch("name")
+    @pose.sanskrit = params.fetch("sanskrit")
+    @pose.picture = params.fetch("picture")
+
+    if @pose.valid?
+      @pose.save
+
+      redirect_to("/yogaflows/#{@pose.yogaflow_id}", notice: "Pose created successfully.")
+    else
+      render("pose_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @pose = Pose.find(params.fetch("prefill_with_id"))
 

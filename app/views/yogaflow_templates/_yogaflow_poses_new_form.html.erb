@@ -1,0 +1,49 @@
+<!-- Form pose start -->
+<form action="/create_pose_from_yogaflow" method="post">
+<!-- Form pose end -->
+
+  <!-- Label and input for yogaflow_id start -->
+  <!-- Input for yogaflow_id start -->
+  <input type="hidden" name="yogaflow_id" value="<%= @yogaflow.id %>">
+  <!-- Input for yogaflow_id end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @pose.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for sanskrit start -->
+  <div class="form-group">
+    <label for="sanskrit">
+      Sanskrit
+    </label>
+
+    <!-- Input for sanskrit start -->
+    <input type="text" id="sanskrit" name="sanskrit" class="form-control" value="<%= @pose.sanskrit %>">
+    <!-- Input for sanskrit end -->
+  </div>
+  <!-- Label and input for sanskrit end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <!-- Input for picture start -->
+    <input type="text" id="picture" name="picture" class="form-control" value="<%= @pose.picture %>">
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pose
+  </button>
+</form>
