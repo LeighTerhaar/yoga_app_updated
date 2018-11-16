@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for yogaflow_id start -->
-    <input type="text" id="yogaflow_id" name="yogaflow_id" class="form-control" value="<%= @pose.yogaflow_id %>">
+    <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.all, :id, :user_id, @pose.yogaflow_id), :class => "form-control") %>
     <!-- Input for yogaflow_id end -->
   </div>
   <!-- Label and input for yogaflow_id end -->
