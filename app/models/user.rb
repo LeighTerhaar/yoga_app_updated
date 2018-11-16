@@ -19,6 +19,14 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :followers,
+             :through => :teacherfriends,
+             :source => :follower
+
+  has_many   :leaders,
+             :through => :studentfriends,
+             :source => :leader
+
   has_many   :favoriteyogaflows,
              :through => :favorites,
              :source => :yogaflow
