@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @pose.errors.any? %>
   <% @pose.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,58 +12,40 @@
 
 <hr>
 
-<!-- Form pose start -->
 <form action="/update_pose/<%= @pose.id %>" method="post" enctype="multipart/form-data">
-<!-- Form pose end -->
 
-  <!-- Label and input for yogaflow_id start -->
   <div class="form-group">
     <label for="yogaflow_id">
       Yogaflow
     </label>
 
-    <!-- Input for yogaflow_id start -->
     <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.all, :id, :user_id, @pose.yogaflow_id), :class => "form-control") %>
-    <!-- Input for yogaflow_id end -->
   </div>
-  <!-- Label and input for yogaflow_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @pose.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for sanskrit start -->
   <div class="form-group">
     <label for="sanskrit">
       Sanskrit
     </label>
 
-    <!-- Input for sanskrit start -->
     <input type="text" id="sanskrit" name="sanskrit" class="form-control" value="<%= @pose.sanskrit %>">
-    <!-- Input for sanskrit end -->
   </div>
-  <!-- Label and input for sanskrit end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <label for="picture">
       Picture
     </label>
 
-    <!-- Input for picture start -->
     <%= cl_image_tag(@pose.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="picture" name="picture" class="form-control">
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update pose

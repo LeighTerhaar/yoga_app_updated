@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link friend start -->
       <div class="col">
         <a href="/friends/<%= @friend.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit friend
         </a>
       </div>
-      <!-- Edit link friend end -->
 
-      <!-- Delete link friend start -->
       <div class="col">
         <a href="/delete_friend/<%= @friend.id %>" class="btn btn-block btn-outline-secondary">
           Delete friend
         </a>
       </div>
-      <!-- Delete link friend end -->
     </div>
 
     <dl>
       <dt>
         Follower
       </dt>
-      <!-- Display follower_id start -->
       <dd>
         <% if @friend.follower.present? %>
           <a href="/users/<%= @friend.follower_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display follower_id end -->
 
       <dt>
         Leader
       </dt>
-      <!-- Display leader_id start -->
       <dd>
         <% if @friend.leader.present? %>
           <a href="/users/<%= @friend.leader_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display leader_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@friend.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@friend.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
