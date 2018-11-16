@@ -23,7 +23,7 @@ class PosesController < ApplicationController
     @pose.yogaflow_id = params.fetch("yogaflow_id")
     @pose.name = params.fetch("name")
     @pose.sanskrit = params.fetch("sanskrit")
-    @pose.picture = params.fetch("picture")
+    @pose.picture = params.fetch("picture") if params.key?("picture")
 
     if @pose.valid?
       @pose.save
@@ -40,7 +40,7 @@ class PosesController < ApplicationController
     @pose.yogaflow_id = params.fetch("yogaflow_id")
     @pose.name = params.fetch("name")
     @pose.sanskrit = params.fetch("sanskrit")
-    @pose.picture = params.fetch("picture")
+    @pose.picture = params.fetch("picture") if params.key?("picture")
 
     if @pose.valid?
       @pose.save
@@ -63,7 +63,7 @@ class PosesController < ApplicationController
     @pose.yogaflow_id = params.fetch("yogaflow_id")
     @pose.name = params.fetch("name")
     @pose.sanskrit = params.fetch("sanskrit")
-    @pose.picture = params.fetch("picture")
+    @pose.picture = params.fetch("picture") if params.key?("picture")
 
     if @pose.valid?
       @pose.save
