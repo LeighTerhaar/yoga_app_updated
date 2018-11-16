@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "yogaflows#index"
   # Routes for the Friend resource:
 
   # CREATE
