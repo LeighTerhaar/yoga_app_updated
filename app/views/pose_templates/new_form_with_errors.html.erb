@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @pose.present? %>
+  <% if @pose.errors.any? %>
+    <% @pose.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new pose
+</h1>
+
+
+<hr>
+
+<!-- Form pose start -->
+<form action="/create_pose" method="post">
+<!-- Form pose end -->
+
+  <!-- Label and input for yogaflow_id start -->
+  <div class="form-group">
+    <label for="yogaflow_id">
+      Yogaflow
+    </label>
+
+    <!-- Input for yogaflow_id start -->
+    <input type="text" id="yogaflow_id" name="yogaflow_id" class="form-control" value="<%= @pose.yogaflow_id %>">
+    <!-- Input for yogaflow_id end -->
+  </div>
+  <!-- Label and input for yogaflow_id end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @pose.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for sanskrit start -->
+  <div class="form-group">
+    <label for="sanskrit">
+      Sanskrit
+    </label>
+
+    <!-- Input for sanskrit start -->
+    <input type="text" id="sanskrit" name="sanskrit" class="form-control" value="<%= @pose.sanskrit %>">
+    <!-- Input for sanskrit end -->
+  </div>
+  <!-- Label and input for sanskrit end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <!-- Input for picture start -->
+    <input type="text" id="picture" name="picture" class="form-control" value="<%= @pose.picture %>">
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pose
+  </button>
+</form>
+
+<hr>
+
+<a href="/poses">
+  Go back
+</a>

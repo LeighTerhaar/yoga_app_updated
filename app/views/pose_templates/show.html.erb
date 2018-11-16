@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Pose #<%= @pose.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/poses" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link pose start -->
+      <div class="col">
+        <a href="/poses/<%= @pose.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit pose
+        </a>
+      </div>
+      <!-- Edit link pose end -->
+
+      <!-- Delete link pose start -->
+      <div class="col">
+        <a href="/delete_pose/<%= @pose.id %>" class="btn btn-block btn-outline-secondary">
+          Delete pose
+        </a>
+      </div>
+      <!-- Delete link pose end -->
+    </div>
+
+    <dl>
+      <dt>
+        Yogaflow
+      </dt>
+      <!-- Display yogaflow_id start -->
+      <dd>
+        <%= @pose.yogaflow_id %>
+      </dd>
+      <!-- Display yogaflow_id end -->
+
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @pose.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Sanskrit
+      </dt>
+      <!-- Display sanskrit start -->
+      <dd>
+        <%= @pose.sanskrit %>
+      </dd>
+      <!-- Display sanskrit end -->
+
+      <dt>
+        Picture
+      </dt>
+      <!-- Display picture start -->
+      <dd>
+        <%= @pose.picture %>
+      </dd>
+      <!-- Display picture end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@pose.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@pose.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
