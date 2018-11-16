@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :studentfriends,
+             :class_name => "Friend",
+             :foreign_key => "follower_id",
+             :dependent => :destroy
+
   has_many   :teacherfriends,
              :class_name => "Friend",
              :foreign_key => "leader_id",

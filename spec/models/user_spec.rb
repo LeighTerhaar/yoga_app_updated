@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:studentfriends) }
+
     it { should have_many(:teacherfriends) }
 
     it { should have_many(:favorites) }
