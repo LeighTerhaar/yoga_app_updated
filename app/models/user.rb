@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :favoriteyogaflows,
+             :through => :favorites,
+             :source => :yogaflow
+
   # Validations
 
   # Include default devise modules. Others available are:
