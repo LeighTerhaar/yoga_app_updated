@@ -1,6 +1,6 @@
 class PosesController < ApplicationController
   def index
-    @poses = Pose.all
+    @poses = Pose.page(params[:page]).per(10)
 
     render("pose_templates/index.html.erb")
   end

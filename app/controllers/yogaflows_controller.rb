@@ -10,7 +10,7 @@ class YogaflowsController < ApplicationController
   end
 
   def index
-    @yogaflows = Yogaflow.all
+    @yogaflows = Yogaflow.page(params[:page]).per(10)
 
     render("yogaflow_templates/index.html.erb")
   end

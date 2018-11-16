@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
   def index
-    @friends = Friend.all
+    @friends = Friend.page(params[:page]).per(10)
 
     render("friend_templates/index.html.erb")
   end
